@@ -9,16 +9,15 @@ g  = 9.81;
 
 
 %% Run Simulation
-sim('Cart_Pendulum_n9945008.slx')
+sim('Cart_Pendulum_Linearised_a_n9945008.slx')
 
 
 %% Plot Results
 figure
 hold on
-plot(tout,F)
-plot(tout,x1)
-plot(tout,x2)
-plot(tout,x3)
-plot(tout,x4)
-legend('F','x1','x2','x3','x4')
+plot(ta,x1a)
+plot(ta,x2a)
+plot(ta,x3a)
+plot(ta,x4a)
+legend('x1','x2','x3','x4')
 hold off

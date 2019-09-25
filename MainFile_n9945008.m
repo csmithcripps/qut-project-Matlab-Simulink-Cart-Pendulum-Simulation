@@ -15,10 +15,14 @@ sim('Cart_Pendulum_n9945008.slx')
 %% Plot Results
 figure
 hold on
-plot(tout,F)
-plot(tout,x1)
-plot(tout,x2)
-plot(tout,x3)
-plot(tout,x4)
+plot(t,F)
+plot(t,x1)
+plot(t,x2)
+plot(t,x3)
+plot(t,x4)
 legend('F','x1','x2','x3','x4')
 hold off
+
+
+%%
+Cart_Pendulum_Animation(t,x1,x2,0,0)
