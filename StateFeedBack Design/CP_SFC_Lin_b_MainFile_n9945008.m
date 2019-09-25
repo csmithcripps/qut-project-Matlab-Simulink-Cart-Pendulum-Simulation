@@ -36,15 +36,10 @@ setPoint = pi;
 
 %% Simulate Models
 x0 = [0.4 200*pi/180 0 0]';
-sim('CP_SFC_Lin_b_n9945008');
-sim('CP_SFC_NLin_n9945008');
+sim('CP_SFC_Lin_b_n9945008.slx');
+sim('CP_SFC_NLin_n9945008.slx');
 
-%% Plot Results
-% figure
-% plot(Error)
-% legend('x error', '\theta error', 'xVel error', 'AngVel error')
-
-figure
+%% Plot Resultsfigure
 hold on
 
 subplot(5,1,1)
@@ -87,11 +82,6 @@ legend('F','Fb')
 title('Control Force');
 hold off
 
-
-%% Disp Final Error
-FinalError = Error(end,:)
-FinalErrorSum = sum(FinalError)
-FinalForce = -Kb * FinalError'
 
 
 
