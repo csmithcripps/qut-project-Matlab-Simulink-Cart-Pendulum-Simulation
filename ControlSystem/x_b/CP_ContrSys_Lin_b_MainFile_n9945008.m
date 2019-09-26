@@ -10,7 +10,7 @@ g  = 9.81;
 %% Compute Linearisation Matrices
 Ab = [ 0 ,          0           , 1 , 0 ;
        0 ,          0           , 0 , 1 ;
-       0 ,     (-(g*m)/Mc)      , 0 , 0 ;
+       0 ,     (-(g*m)/Mc)      , 0 , 0 ;   
        0 , (-(g*(Mc+m))/(l*Mc)) , 0 , 0 ];
    
 Bb = [0;0;1/Mc;1/(l*Mc)];

@@ -1,5 +1,5 @@
 %Clear Workspace
-clearvars; close all; clc;
+clearvars; close all; clc; clear
 
 %% Init parameters
 m  = 0.15;
@@ -75,10 +75,10 @@ hold off
 
 subplot(5,1,2)
 hold on
-plot(t,x2)
-plot(ta,x2a)
-plot(t,x2hat, '--')
-plot(ta,x2ahat, '--')
+plot(t,x2*180/pi)
+plot(ta,x2a*180/pi)
+plot(t,x2hat*180/pi, '--')
+plot(ta,x2ahat*180/pi, '--')
 title('\theta')
 legend('Non-Linear','Linear','Non-Linear Estimate','Linear Estimate')
 hold off
@@ -95,10 +95,10 @@ hold off
 
 subplot(5,1,4)
 hold on
-plot(t,x4)
-plot(ta,x4a)
-plot(t,x4hat, '--')
-plot(ta,x4ahat, '--')
+plot(t,x4*180/pi)
+plot(ta,x4a*180/pi)
+plot(t,x4hat*180/pi, '--')
+plot(ta,x4ahat*180/pi, '--')
 title('Angular Velocity');
 legend('Non-Linear','Linear','Non-Linear Estimate','Linear Estimate')
 hold off
