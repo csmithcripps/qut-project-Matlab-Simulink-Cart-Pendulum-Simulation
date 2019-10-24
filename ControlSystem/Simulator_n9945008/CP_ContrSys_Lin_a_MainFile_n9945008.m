@@ -27,7 +27,7 @@ controllableStates = rank(ctrb(Aa,Ba));
 if controllableStates == length(Aa)
     disp("This System is Controllable")
 else
-    disp("This System is not Controllable")
+    disp("This System is not fully Controllable")
 end
 
 
@@ -112,7 +112,93 @@ legend('Non-Linear','Linear')
 hold off
 
 
+%% Test with Different initial Conditions
+x2_20 = x2;
+x2a_20 = x2a;
 
+figure;
+hold on
+plot(t,x2*180/pi)
+plot(ta,x2a*180/pi)
+
+
+x0 = [0.2 30*pi/180 0 0]';
+sim('CP_ContrSys_Lin_a_n9945008');
+sim('CP_ContrSys_NLin_n9945008');
+
+hold on
+plot(t,x2*180/pi)
+plot(ta,x2a*180/pi)
+
+
+x0 = [0.2 40*pi/180 0 0]';
+sim('CP_ContrSys_Lin_a_n9945008');
+sim('CP_ContrSys_NLin_n9945008');
+
+hold on
+plot(t,x2*180/pi)
+plot(ta,x2a*180/pi)
+
+x0 = [0.2 50*pi/180 0 0]';
+sim('CP_ContrSys_Lin_a_n9945008');
+sim('CP_ContrSys_NLin_n9945008');
+
+hold on
+plot(t,x2*180/pi)
+plot(ta,x2a*180/pi)
+
+x0 = [0.2 60*pi/180 0 0]';
+sim('CP_ContrSys_Lin_a_n9945008');
+sim('CP_ContrSys_NLin_n9945008');
+
+hold on
+plot(t,x2*180/pi)
+plot(ta,x2a*180/pi)
+xlim([0,3.5])
+legend("20deg NLin", "20deg Lin","30deg NLin", "30deg Lin",...
+    "40deg NLin", "40deg Lin","50deg NLin", "50deg Lin","60deg NLin", "60deg Lin")
+xlabel("Time (s)")
+ylabel("Angle of Pendulum (deg)")
+
+
+
+
+%% Further Edge testing
+figure;
+
+x0 = [0.2 50*pi/180 0 0]';
+sim('CP_ContrSys_NLin_n9945008');
+hold on
+plot(t,x2*180/pi)
+
+x0 = [0.2 52*pi/180 0 0]';
+sim('CP_ContrSys_NLin_n9945008');
+hold on
+plot(t,x2*180/pi)
+
+x0 = [0.2 54*pi/180 0 0]';
+sim('CP_ContrSys_NLin_n9945008');
+hold on
+plot(t,x2*180/pi)
+
+x0 = [0.2 56*pi/180 0 0]';
+sim('CP_ContrSys_NLin_n9945008');
+hold on
+plot(t,x2*180/pi)
+
+x0 = [0.2 58*pi/180 0 0]';
+sim('CP_ContrSys_NLin_n9945008');
+hold on
+plot(t,x2*180/pi)
+
+x0 = [0.2 -50*pi/180 0 0]';
+sim('CP_ContrSys_NLin_n9945008');
+hold on
+plot(t,x2*180/pi)
+
+legend("50deg","52deg","54deg","56deg","58deg", "-50deg")
+xlabel("Time (s)")
+ylabel("Angle of Pendulum (deg)")
 
 
 
